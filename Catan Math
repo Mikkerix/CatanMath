@@ -1,3 +1,4 @@
+<div class="text-purple">
  <form id="form">
    <input type="text" name="number1" id="number1" placeholder="Value #1" />
    <input type="text" name="number2" id="number2" placeholder="Value #2" />
@@ -37,3 +38,4 @@ form.addEventListener("submit", function (e) {
   document.write(PercentageTwoDecimals);
   document.write(message3);
 });
+</div>
