@@ -1,47 +1,39 @@
  <form id="form">
-   <input type="text" name="tall1" id="tall1" placeholder="Spot 1" />
-   <input type="text" name="tall2" id="tall2" placeholder="Spot 2" />
-   <input type="text" name="tall3" id="tall3" placeholder="Spot 3" />
-   <p id="tall4"> </p>
-   <p id="tall5"> </p>
-   <p id="tall6"> </p>
-   <button type="submit">Send</button>
+   <input type="text" name="number1" id="number1" placeholder="Value #1" />
+   <input type="text" name="number2" id="number2" placeholder="Value #2" />
+   <input type="text" name="number3" id="number3" placeholder="Value #3" />
+   <p id ="useless"> </p>
+   <button type="submit">Submit</button>
  </form>
  body {
 	background: white;
 	place-items: center;
 
 }
-console.log("hello, developer!");
 const form = document.getElementById("form");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  var Sum_av_tretti_seks = 0;
-  console.log("", Sum_av_tretti_seks);
-  var melding = "You should get resources ";
-  var melding2 = " times of 36 different possibilities, or ";
-  var melding3 =
-    "% of the time. We hope you enjoyed Catan Math, if you wanna play Catan online we recommend: ";
-  const tall2 = document.getElementById("tall2").value;
-  const tall1 = document.getElementById("tall1").value;
-  const tall3 = document.getElementById("tall3").value;
-  console.log(tall1);
-  var muligheter = [];
+  var Possibilities_of_36_ = 0;
+  var message1 = "You should get resources ";
+  var message2 = " times of 36 different possibilities, or ";
+  var message3 =
+    "% of the time. Don't forget to bookmark this site (Ctrl + D)! We hope you enjoyed Catan Math, if you wanna play Catan online we recommend using colonist.io ";
+  const number1 = document.getElementById("number1").value;
+  const number2 = document.getElementById("number2").value;
+  const number3 = document.getElementById("number3").value;
   for (var i = 1; i < 7; i++) {
     for (var n = 1; n < 7; n++) {
-      muligheter.push(i, n);
-      if (i + n == tall1 || i + n == tall2 || i + n == tall3) {
-        Sum_av_tretti_seks += 1;
+      if (i + n == number1 || i + n == number2 || i + n == number3) {
+        Possibilities_of_36_ += 1;
       }
     }
   }
-  var Prosentandel = (parseInt(Sum_av_tretti_seks) / 36) * 100;
-  var ProsentandelAvrundet = Prosentandel.toFixed(2);
+  var Percentage = ((parseInt(Possibilities_of_36_) / 36) * 100);
+  var PercentageTwoDecimals = Percentage.toFixed(2);
   const output = document.getElementById("output");
-  document.write(melding);
-  document.write(Sum_av_tretti_seks);
-  document.write(melding2);
-  document.write(ProsentandelAvrundet);
-  document.write(melding3);
-  document.write("https://www.colonist.io");
+  document.write(message1);
+  document.write(Possibilities_of_36_);
+  document.write(message2);
+  document.write(PercentageTwoDecimals);
+  document.write(message3);
 });
